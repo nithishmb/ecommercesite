@@ -1,0 +1,23 @@
+{% load static %}  <!-- ✅ Place this only once at the top -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Shop</title>
+</head>
+<body>
+    <h1>Products</h1>
+
+    {% for product in products %}
+        <div>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+            <p>₹{{ product.price }}</p>
+            {% if product.image %}
+                <img src="{{ product.image.url }}" width="200" />
+            {% endif %}
+        </div>
+    {% endfor %}
+
+</body>
+</html>
